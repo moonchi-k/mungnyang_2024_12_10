@@ -7,6 +7,8 @@ const Wrap = styled.div`
   background-image: url("/Img/nightImg.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+
   display: flex;
   text-align: center;
   /* justify-content: center; */
