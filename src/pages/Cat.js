@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Wrap = styled.div`
@@ -9,6 +11,7 @@ const Wrap = styled.div`
   padding-top: 50px;
   margin: 0 auto;
   text-align: center;
+  overflow: scroll;
 `;
 
 const Title = styled.div`
@@ -37,14 +40,36 @@ const ZodiacList = styled.div`
 const Selected = styled.div`
   color: white;
   display: flex;
-  width: 60%;
-  justify-content: space-between;
+  width: 80%;
+  height: 150px;
+  justify-content: space-around;
+  background-color: rgba(168, 174, 208, 0.5);
+  border-radius: 20px;
+  padding: 20px;
   margin: 0 auto;
   font-size: 22px;
-  margin-top: 30px;
+  margin-top: 100px;
+  margin-bottom: 70px;
+  h4 {
+    margin-bottom: 5px;
+  }
+  img {
+    display: block;
+    width: 80px;
+    height: 80px;
+  }
 `;
-const Keeper = styled.div``;
-const Cats = styled.div``;
+
+const Keeper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+const Cats = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
 const ZodiacItem = styled.div`
   img {
     display: block;
@@ -55,6 +80,32 @@ const ZodiacItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  /* width: 145px;
+  height: 165px; */
+  border-radius: 25px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(168, 174, 208, 0.1);
+  }
+`;
+
+const Result = styled.div`
+  width: 180px;
+  padding: 15px 5px;
+  font-size: 18px;
+  border: 1px solid white;
+  border-radius: 200px;
+  color: white;
+  background-color: #222a5c;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #7c70ac;
+  }
 `;
 const zodiac = [
   {
@@ -67,7 +118,7 @@ const zodiac = [
     id: "1",
     url: "/Img/pisces.png",
     title: "물고기자리",
-    date: "1.20~2.18",
+    date: "2.19~3.20",
   },
   {
     id: "2",
@@ -132,6 +183,34 @@ const zodiac = [
 ];
 
 const Cat = () => {
+  const [keeperId, setKeeperId] = useState(null);
+  const [catsId, setCatsId] = useState(null);
+  const [keeperImage, setKeeperImage] = useState(null);
+  const [catsImage, setCatsImage] = useState(null);
+  //   const [clickCount, setClickCount] = useState(0);
+  //   const [visibleKeeper, setVisibleKeeper] = useState(false);
+  //   const [visibleDogs, setVisibleDogs] = useState(false);
+  const [isKeeperSelected, setIsKeeperSelected] = useState(false);
+  const [isCatsSelected, setIsCatsSelected] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClick = (id, url) => {
+    if (!isKeeperSelected) {
+      setKeeperId(id);
+      setKeeperImage(url);
+      setIsKeeperSelected(true);
+    } else if (!isCatsSelected) {
+      setCatsId(id);
+      setCatsImage(url);
+      setIsCatsSelected(true);
+    }
+  };
+
+  const goToResult = () => {
+    navigate("/catresult", {
+      state: { keeperId, catsId, keeperImage, catsImage },
+    });
+  };
   return (
     <Wrap>
       <Logo>멍냥궁합</Logo>
@@ -139,7 +218,10 @@ const Cat = () => {
         <Title>별자리를 선택해주세요!</Title>
         <ZodiacList>
           {zodiac.map((list) => (
-            <ZodiacItem key={list.id}>
+            <ZodiacItem
+              key={list.id}
+              onClick={() => handleClick(list.id, list.url)}
+            >
               <img src={list.url} alt={list.title} />
               <h4>{list.title}</h4>
               <h5>{list.date}</h5>
@@ -147,9 +229,25 @@ const Cat = () => {
           ))}
         </ZodiacList>
         <Selected>
-          <Keeper>집사 별자리</Keeper>
-          <Cats>고양이 별자리</Cats>
+          <Keeper>
+            <h4>집사 별자리</h4>
+            <img
+              src={keeperImage || ""}
+              alt=""
+              style={{ display: isKeeperSelected ? "block" : "none" }}
+            />
+          </Keeper>
+          <Cats>
+            <h4>고양이 별자리</h4>
+            <img
+              src={catsImage || ""}
+              alt=""
+              style={{ display: isCatsSelected ? "block" : "none" }}
+            />
+          </Cats>
         </Selected>
+
+        <Result onClick={goToResult}>결과보기!</Result>
       </Conwrap>
     </Wrap>
   );

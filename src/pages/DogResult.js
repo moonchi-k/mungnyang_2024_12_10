@@ -1,5 +1,6 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import { DogDesc } from "../components/DogDesc";
 
 const Wrap = styled.div`
   max-width: 450px;
@@ -15,6 +16,7 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  overflow: scroll;
 `;
 
 const Logo = styled.div`
@@ -27,11 +29,18 @@ const Con = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  color: white;
+  position: relative;
+  height: 100%;
 `;
 const Img = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  height: 20%;
+  margin-bottom: 30px;
+
   img {
     display: block;
     width: 125px;
@@ -40,82 +49,144 @@ const Img = styled.div`
 `;
 const Desc = styled.div`
   width: 100%;
+  opacity: 0.8;
+  margin-bottom: 100px;
+  height: 30%;
+  line-height: 34px;
+  font-size: 20px;
+  font-family: "BMHANNAPro";
 `;
-const Detail = styled.div``;
-const Tip = styled.div``;
-const Rec = styled.div``;
+const Detail = styled.div`
+  font-family: "BMHANNAPro";
+  height: 30%;
+  opacity: 0.8;
+
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 30px;
+`;
+const Tip = styled.div`
+  width: 45%;
+  line-height: 20px;
+
+  div {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+`;
+const Rec = styled.div`
+  width: 45%;
+  line-height: 20px;
+
+  div {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+`;
+
+const Btn = styled.div`
+  img {
+    margin-right: 5px;
+    display: block;
+  }
+  display: flex;
+
+  width: 90%;
+  line-height: 20px;
+  color: white;
+  margin-bottom: 100px;
+  letter-spacing: 2px;
+  justify-content: space-between;
+
+  a {
+    width: 49%;
+    height: 60px;
+    border: 3px solid #1b154d;
+    border-radius: 100px;
+    display: flex;
+    text-align: center;
+    background-color: #9580e8;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    margin-bottom: 50px;
+    &:hover {
+      background-color: #7c60ee;
+    }
+  }
+
+  .pre {
+    color: white;
+    background-color: rgba(168, 174, 208, 0.5);
+    img {
+      display: block;
+      width: 18px;
+    }
+    &:hover {
+      background-color: rgba(168, 174, 208, 0.8);
+    }
+  }
+`;
+const Retry = styled.div`
+  display: flex;
+`;
+const Pre = styled.div`
+  display: flex;
+`;
 
 const DogResult = () => {
   const location = useLocation();
   const { keeperId, dogsId, keeperImage, dogsImage } = location.state || {};
 
-  const relationshipDescriptions = [
-    {
-      keeperId: 2, // 양자리 집사
-      dogsId: 2, // 양자리 강아지
-      description:
-        "양자리 집사와 양자리 강아지는 매우 잘 맞습니다. 둘 다 활발하고 에너지가 넘치며, 서로 잘 맞는 성격을 가지고 있습니다. 함께 뛰어놀고 모험을 즐기는 관계입니다.",
-      tip: "서로의 에너지를 잘 맞추고, 함께 활동적인 시간을 보내세요.",
-      recommendedActivity: "달리기, 산책, 야외 모험",
-    },
-    {
-      keeperId: 3, // 황소자리 집사
-      dogsId: 4, // 쌍둥이자리 강아지
-      description:
-        "황소자리 집사는 안정적이고 신중한 성격을 가진 집사로, 쌍둥이자리 강아지와 성격 차이가 있을 수 있습니다. 황소자리 집사는 일관된 환경을 선호하지만, 쌍둥이자리 강아지는 변화를 좋아합니다.",
-      tip: "서로의 성격 차이를 이해하고 조화를 이루기 위한 배려가 필요합니다.",
-      recommendedActivity:
-        "규칙적인 산책, 간단한 훈련, 변화가 적은 환경에서의 활동",
-    },
-    {
-      keeperId: 4, // 쌍둥이자리 집사
-      dogsId: 4, // 쌍둥이자리 강아지
-      description:
-        "쌍둥이자리 집사와 쌍둥이자리 강아지는 매우 잘 맞습니다. 둘은 모두 활발하고 지적인 성향을 가지고 있으며, 새로운 자극을 즐깁니다. 다양한 활동을 함께 할 수 있습니다.",
-      tip: "서로의 변화를 즐기고, 지적 자극을 제공하는 활동을 함께 하세요.",
-      recommendedActivity: "퍼즐 놀이, 실내 외 탐험, 창의적인 활동",
-    },
-    // 다른 궁합 항목들도 추가 가능
-  ];
+  const desc = DogDesc.find(
+    (item) => item.keeperId === keeperId && item.dogsId === dogsId
+  );
 
-  // 궁합 설명을 찾는 함수
-  function getRelationshipDescription({ keeperId, dogsId }) {
-    if (keeperId === 0 && dogsId === 0) {
-      return (
-        <div>
-          <h2>
-            {keeperId} 집사와 {dogsId} 강아지의 궁합
-          </h2>
-          <p>{relationshipDescriptions.description}</p>
-          <p>
-            <strong>팁:</strong> {relationshipDescriptions.tip}
-          </p>
-          <p>
-            <strong>추천 활동:</strong>{" "}
-            {relationshipDescriptions.recommendedActivity}
-          </p>
-        </div>
-      );
-    } else {
-      return <p>해당 궁합 정보를 찾을 수 없습니다.</p>;
-    }
-  }
-  console.log(keeperId);
   return (
-    <Wrap>
-      <Logo>멍냥궁합</Logo>
-      <Con>
-        <Img>
-          <img src={keeperImage} alt="" />
-          <img src={dogsImage} alt="" />
-        </Img>
-        <Desc>{getRelationshipDescription(keeperId, dogsId)}</Desc>
-        <Detail>
-          <Tip></Tip>
-          <Rec></Rec>
-        </Detail>
-      </Con>
-    </Wrap>
+    <>
+      {desc ? (
+        <>
+          <Wrap>
+            <Logo>멍냥궁합</Logo>
+            <Con>
+              <Img>
+                <img src={keeperImage} alt="" />
+                <img src={dogsImage} alt="" />
+              </Img>
+              <Desc>{desc.description}</Desc>
+              <Detail>
+                <Tip>
+                  <div>💡 맞춤형 팁 </div>
+                  {desc.tip}
+                </Tip>
+                <Rec>
+                  <div> ✅ 추천 활동 </div>
+                  {desc.recommendedActivity}
+                </Rec>
+              </Detail>
+              <Btn>
+                <Link to="/dog" className="pre">
+                  <Pre>
+                    <img src="/Img/arrow.png" alt="" />
+                    이전으로
+                  </Pre>
+                </Link>
+                <Link to="/version">
+                  <Retry>
+                    <img src="/Img/retry.png" alt="" />
+                    다시하기
+                  </Retry>
+                </Link>
+              </Btn>
+            </Con>
+          </Wrap>
+        </>
+      ) : (
+        <div>궁합정보가없습니다</div>
+      )}
+    </>
   );
 };
 

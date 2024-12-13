@@ -14,6 +14,13 @@ export const GlobalStyled = createGlobalStyle`
     font-style: normal;
 }
 
+@font-face {
+font-family: 'BMHANNAPro';
+src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff');
+font-weight: normal;
+font-style: normal;
+}
+
 body {
     font-family: 'BMJUA';
     

@@ -43,6 +43,9 @@ const DogBtn = styled.div`
   border: 2px solid white;
   background-color: #222a5c;
   margin-bottom: 20px;
+  &:hover {
+    background-color: #7c70ac;
+  }
 `;
 const CatBtn = styled.div`
   color: white;
@@ -53,6 +56,9 @@ const CatBtn = styled.div`
   text-align: center;
   border: 2px solid white;
   background-color: #222a5c;
+  &:hover {
+    background-color: #7c70ac;
+  }
 `;
 
 const Version = () => {

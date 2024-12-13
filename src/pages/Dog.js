@@ -79,6 +79,13 @@ const ZodiacItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  border-radius: 25px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(168, 174, 208, 0.1);
+  }
 `;
 
 const Result = styled.div`
@@ -91,6 +98,12 @@ const Result = styled.div`
   background-color: #222a5c;
   margin: 0 auto;
   margin-bottom: 50px;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #7c70ac;
+  }
 `;
 const zodiac = [
   {
@@ -103,7 +116,7 @@ const zodiac = [
     id: "1",
     url: "/Img/pisces.png",
     title: "물고기자리",
-    date: "1.20~2.18",
+    date: "2.19~3.20",
   },
   {
     id: "2",
@@ -190,23 +203,6 @@ const Dog = () => {
       setIsDogsSelected(true);
     }
   };
-  console.log(keeperId);
-  console.log(dogsId);
-
-  //   const handleClick = (id, url) => {
-  //     setClickCount((prevCount) => prevCount + 1);
-  //     if (clickCount % 2 === 0) {
-  //       setKeeperImage(url);
-  //       setVisibleKeeper(true);
-  //       setKeeperId(id);
-  //       console.log(keeperImage);
-  //     } else {
-  //       setDogsImage(url);
-  //       setVisibleDogs(true);
-  //       setDogsId(id);
-  //       console.log(dogsImage);
-  //     }
-  //   };
 
   const goToResult = () => {
     navigate("/dogresult", {
