@@ -79,6 +79,7 @@ const ZodiacItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10px;
 
   border-radius: 25px;
   cursor: pointer;

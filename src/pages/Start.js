@@ -27,12 +27,27 @@ const Anim = keyframes`
 0% {
   top: 330px;
   left: 50px;
-  background-color: purple;
+  /* background-color: purple; */
 }
-100% {}
+100% {
+  top: 550px;
+  left: 350px;
+  opacity: 0.1;
+}
 `;
 
-const Anima = keyframes``;
+const Anima = keyframes`
+0% {
+  top: 40px;
+  left: 320px;
+  /* background-color: aqua; */
+}
+100% {
+  top: 60px;
+  left: 350px;
+  opacity: 0.1;
+}
+`;
 const StarRd = styled.div`
   position: absolute;
   top: 330px;
@@ -46,7 +61,7 @@ const StarRd = styled.div`
 const StarNd = styled.div`
   position: absolute;
   top: 40px;
-  left: 20px;
+  left: 320px;
   animation-name: ${Anima};
   animation-timing-function: cubic-bezier(0, 0.45, 0.26, 0.95);
   animation-duration: 2s;
