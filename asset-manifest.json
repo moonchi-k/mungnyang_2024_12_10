@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/mungnyang_2024_12_10/static/js/main.3c860884.js",
+    "main.js": "/mungnyang_2024_12_10/static/js/main.efc339ed.js",
     "index.html": "/mungnyang_2024_12_10/index.html",
-    "main.3c860884.js.map": "/mungnyang_2024_12_10/static/js/main.3c860884.js.map"
+    "main.efc339ed.js.map": "/mungnyang_2024_12_10/static/js/main.efc339ed.js.map"
   },
   "entrypoints": [
-    "static/js/main.3c860884.js"
+    "static/js/main.efc339ed.js"
   ]
 }
