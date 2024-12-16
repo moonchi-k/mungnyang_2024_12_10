@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Wrap = styled.div`
   max-width: 450px;
   height: 100vh;
-  background-image: url("/Img/starImg.png");
+  background-image: url("https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/starImg.png");
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 50px;

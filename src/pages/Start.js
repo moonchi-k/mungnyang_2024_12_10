@@ -46,6 +46,7 @@ const Anima = keyframes`
   top: 60px;
   left: 350px;
   opacity: 0.1;
+  /* background-color: aqua; */
 }
 `;
 const StarRd = styled.div`
@@ -54,8 +55,9 @@ const StarRd = styled.div`
   left: 50px;
   /* z-index: -10; */
   animation-name: ${Anim};
-  animation-timing-function: cubic-bezier(0, 0.45, 0.26, 0.95);
+  /* animation-timing-function: cubic-bezier(0, 0.45, 0.26, 0.95); */
   animation-duration: 2s;
+  /* animation-delay: 2s; */
   animation-iteration-count: infinite;
 `;
 const StarNd = styled.div`
@@ -72,7 +74,7 @@ const Wrap = styled.div`
   position: relative;
   max-width: 450px;
   height: 100vh;
-  background-image: url("/Img/nightImg.png");
+  background-image: url("https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/nightImg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -116,7 +118,7 @@ const SubTitle = styled.div``;
 const Img = styled.div`
   width: 250px;
   height: 250px;
-  background-image: url("/Img/zodiac.png");
+  background-image: url("https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/zodiac.png");
   background-position: center;
   background-size: contain;
   border-radius: 130px;
@@ -129,13 +131,22 @@ const Start = () => {
   return (
     <Wrap>
       <Star>
-        <img src="/Img/star.png" alt="" />
+        <img
+          src="https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/star.png"
+          alt=""
+        />
       </Star>
       <StarNd>
-        <img src="/Img/star.png" alt="" />
+        <img
+          src="https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/star.png"
+          alt=""
+        />
       </StarNd>
       <StarRd>
-        <img src="/Img/star.png" alt="" />
+        <img
+          src="https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/star.png"
+          alt=""
+        />
       </StarRd>
 
       <Con>

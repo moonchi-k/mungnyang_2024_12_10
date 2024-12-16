@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Wrap = styled.div`
   max-width: 450px;
   height: 100vh;
-  background-image: url("/Img/starImg.png");
+  background-image: url("https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/starImg.png");
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 50px;
@@ -109,73 +109,73 @@ const Result = styled.div`
 const zodiac = [
   {
     id: "0",
-    url: "/Img/aquarius.png",
+    url: "https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/aquarius.png",
     title: "물병자리",
     date: "1.20~2.18",
   },
   {
     id: "1",
-    url: "/Img/pisces.png",
+    url: "https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/pisces.png",
     title: "물고기자리",
     date: "2.19~3.20",
   },
   {
     id: "2",
-    url: "/Img/aries.png",
+    url: "https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/aries.png",
     title: "양자리",
     date: "3.21~4.19",
   },
   {
     id: "3",
-    url: "/Img/taurus.png",
+    url: "https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/taurus.png",
     title: "황소자리",
     date: "4.20~5.20",
   },
   {
     id: "4",
-    url: "/Img/gemini.png",
+    url: "https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/gemini.png",
     title: "쌍둥이자리",
     date: "5.21~6.21",
   },
   {
     id: "5",
-    url: "/Img/cancer.png",
+    url: "https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/cancer.png",
     title: "게자리",
     date: "6.22~7.22",
   },
   {
     id: "6",
-    url: "/Img/leo.png",
+    url: "https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/leo.png",
     title: "사자자리",
     date: "7.23~8.22",
   },
   {
     id: "7",
-    url: "/Img/virgo.png",
+    url: "https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/virgo.png",
     title: "처녀자리",
     date: "8.23~9.23",
   },
   {
     id: "8",
-    url: "/Img/libra.png",
+    url: "https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/libra.png",
     title: "천칭자리",
     date: "9.24~10.22",
   },
   {
     id: "9",
-    url: "/Img/scorpio.png",
+    url: "https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/scorpio.png",
     title: "전갈자리",
     date: "10.23~11.22",
   },
   {
     id: "10",
-    url: "/Img/sagitarius.png",
+    url: "https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/sagitarius.png",
     title: "사수자리",
     date: "11.23~12.24",
   },
   {
     id: "11",
-    url: "/Img/aries.png",
+    url: "https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/aries.png",
     title: "염소자리",
     date: "12.25~1.19",
   },

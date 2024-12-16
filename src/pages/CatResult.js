@@ -5,7 +5,7 @@ import { CatDesc } from "../components/CatDesc";
 const Wrap = styled.div`
   max-width: 450px;
   height: 100vh;
-  background-image: url("/Img/resultBg (1).png");
+  background-image: url("https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/resultBg (1).png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -174,13 +174,19 @@ const CatResult = () => {
               <Btn>
                 <Link to="/cat" className="pre">
                   <Pre>
-                    <img src="/Img/arrow.png" alt="" />
+                    <img
+                      src="https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/arrow.png"
+                      alt=""
+                    />
                     이전으로
                   </Pre>
                 </Link>
                 <Link to="/version">
                   <Retry>
-                    <img src="/Img/retry.png" alt="" />
+                    <img
+                      src="https://moonchi-k.github.io/mungnyang_2024_12_10/assets/Img/retry.png"
+                      alt=""
+                    />
                     다시하기
                   </Retry>
                 </Link>
